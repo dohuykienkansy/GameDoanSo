@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="logo.png">
+  <title>Trò chơi đoán số (1–100)</title>
+  <link rel="stylesheet" href="index.css">
+
+</head>
+<body>
+  <div class="card">
+    <h1>🎮 Trò chơi đoán số (1–100)</h1>
+    <p class="sub">Chọn độ khó trước khi chơi nhé!</p>
+
+    <!-- Độ khó -->
+    <div class="row" aria-label="Chọn độ khó">
+      <div class="seg" id="difficultySeg">
+        <button data-tries="10" class="active" aria-pressed="true">Dễ</button>
+        <button data-tries="6" aria-pressed="false">Trung bình</button>
+        <button data-tries="3" aria-pressed="false">Khó</button>
+      </div>
+      <div class="stat">
+        <span class="badge">Lượt tối đa: <b id="maxTries">10</b></span>
+        <span class="badge">Còn lại: <b id="leftTries">10</b></span>
+      </div>
+    </div>
+
+    <!-- Nhập đoán -->
+    <div class="row">
+      <input type="number" id="guessInput" min="1" max="100" placeholder="Nhập 1–100" />
+      <button class="primary" id="btnGuess">Đoán</button>
+      <button class="secondary" id="btnRestart" style="display:none;">Chơi lại</button>
+    </div>
+
+    <div class="message" id="message" aria-live="polite"></div>
+    <div class="history" id="history"></div>
+
+    <hr class="hr" />
+
+    <!-- Thống kê phiên chơi (tính trong lần mở trang) -->
+    <div class="row">
+      <div class="stat">
+        <span class="badge">Ván đã chơi: <b id="played">0</b></span>
+        <span class="badge">Ván thắng: <b id="won">0</b></span>
+      </div>
+    </div>
+    <div class="footer">
+      <small>Tip: nhập số xong bấm <b>Enter</b> để đoán nhanh.</small>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+  <script src="index.js"></script>
+  
+</body>
+</html>
